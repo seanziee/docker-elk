@@ -1,6 +1,6 @@
 # https://github.com/elastic/kibana-docker
 FROM docker.elastic.co/kibana/kibana-oss:6.2.4
-
+USER root
 # node and npm
 RUN yum -y update
 RUN yum -y install epel-release
