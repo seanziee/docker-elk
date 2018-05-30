@@ -1,6 +1,18 @@
 # https://github.com/elastic/kibana-docker
 FROM docker.elastic.co/kibana/kibana-oss:6.2.4
 
+# node and npm
+RUN yum -y update
+RUN yum -y install epel-release
+RUN yum -y install nodejs
+RUN yum -y install npm
+#
+# tools
+RUN yum -y install net-tools
+RUN yum -y install curl
+RUN yum -y install git
+RUN npm install -g bower
+
 # Add your kibana plugins setup here
 # Example: RUN kibana-plugin install <name|url>
 # Time Picker
